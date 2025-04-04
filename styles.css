@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+body {
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+    color: #d81b60;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    /* Background dengan gambar dan overlay transparan */
+    background: 
+        linear-gradient(rgba(255, 235, 238, 0.7), rgba(255, 235, 238, 0.7)),
+        url('file/birthday.jpg') center/cover no-repeat fixed;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6); /* 30% transparan */
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(216, 27, 96, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    color: #c2185b;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-top: 0;
+    animation: colorChange 5s infinite alternate;
+}
+
+@keyframes colorChange {
+    0% { color: #c2185b; }
+    25% { color: #e91e63; }
+    50% { color: #9c27b0; }
+    75% { color: #3f51b5; }
+    100% { color: #009688; }
+}
+
+/* Balon */
+.balloons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.balloon {
+    display: inline-block;
+    width: 40px;
+    height: 50px;
+    background-color: #f48fb1;
+    border-radius: 50%;
+    margin: 0 5px;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+.balloon:before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 15px;
+    width: 10px;
+    height: 10px;
+    background-color: #f8bbd0;
+    border-radius: 50%;
+}
+
+.balloon:nth-child(2n) {
+    background-color: #ce93d8;
+    animation-delay: 0.5s;
+}
+
+.balloon:nth-child(3n) {
+    background-color: #90caf9;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Kue */
+.cake {
+    font-size: 50px;
+    margin: 20px 0;
+    animation: pulse 1.5s infinite;
+    display: block;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Pesan */
+.message {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 20px 0 60px;
+    padding: 0 30px; /* Tambahkan padding kiri-kanan */
+    animation: slideIn 1s ease-out;
+    position: relative;
+    z-index: 20;
+    text-align: center; /* Pastikan teks tetap di tengah */
+    max-width: 80%; /* Lebar maksimal dikurangi */
+    margin-left: auto; /* Geser ke kanan */
+    margin-right: auto; /* Pertahankan di tengah */
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.blue-book-container {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+}
+
+/* Doll Styles with Animation */
+.blue-book {
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.3));
+    animation: wiggle 3s infinite; /* Wiggle animation applied */
+}
+
+.blue-book .book-text {
+    font-size: 80px;
+    line-height: 1;
+    display: block;
+    transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Arrow & Hint Styles */
+.arrow-hint {
+    display: flex;
+    align-items: center;
+    margin-left: 120px;
+    position: relative;
+    top: 15px;
+}
+
+.arrow {
+    font-size: 25px;
+    margin-right: 15px;
+    animation: bounce 1s infinite alternate;
+}
+
+.hint-text {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #d81b60;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: pulse 1.5s infinite;
+}
+
+/* Animations */
+@keyframes wiggle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(5deg) scale(1.05); }
+    75% { transform: rotate(-5deg) scale(1.05); }
+}
+
+@keyframes bounce {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(8px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+/* Hover Effects */
+.blue-book:hover {
+    animation: none;
+    transform: scale(1.1);
+}
+
+.blue-book:hover .book-text {
+    transform: scale(1.3) rotate(15deg);
+}
+
+/* Buku Tertutup */
+.book-closed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s;
+    will-change: transform, opacity;
+    animation: bounce 2s infinite;
+}
+
+.book-closed:hover {
+    transform: scale(1.1);
+    animation: none;
+}
+
+/* Buku Terbuka */
+.book-opened {
+    position: fixed;
+    bottom: -100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff9c4;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.2);
+    will-change: transform, opacity;
+}
+
+.book-opened.show {
+    bottom: 0;
+}
+
+.book-content {
+    max-width: 80%;
+    text-align: center;
+    padding: 20px;
+    color: #5d4037;
+    background: url('https://img.freepik.com/free-vector/vintage-paper-texture_1194-6505.jpg');
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+    animation: popIn 0.5s ease-out;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.book-content h2 {
+    color: #d81b60;
+    margin-bottom: 20px;
+    animation: colorChange 5s infinite alternate;
+}
+
+.book-content p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Style untuk tombol Tutup */
+#close-book {
+    background-color: #5d4037;
+    color: white;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Efek hover untuk tombol Tutup */
+#close-book:hover {
+    background-color: #3e2723;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Efek aktif saat tombol diklik */
+#close-book:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Confetti */
+.confetti {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background-color: #f00;
+    opacity: 0.7;
+    z-index: 100;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+/* Responsif */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .message {
+        font-size: 1rem;
+    }
+
+    .cake {
+        font-size: 40px !important;
+    }
+
+    .balloon {
+        width: 30px;
+        height: 40px;
+        margin: 0 3px;
+    }
+
+    .blue-book {
+        width: 70px;
+        height: 90px;
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    .book-text {
+        font-size: 0.8rem;
+    }
+    
+    .book-closed {
+        font-size: 1.5rem;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .book-content {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.5rem !important;
+    }
+    
+    .message p {
+        margin: 10px 0;
+    }
+
+    .blue-book {
+        width: 60px;
+        height: 80px;
+    }
+}
