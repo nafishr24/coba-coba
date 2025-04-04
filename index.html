@@ -14,6 +14,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+        <!-- Modal Konfirmasi Audio -->
+        <div id="audioModal">
+            <div class="modal-content">
+                <h2>🎵 Musik Latar 🎵</h2>
+                <p>🎀 Do you wanna listen to the music? 🎀</p>
+                <div class="modal-buttons">
+                    <button id="yesBtn" class="audio-btn">🎀 Ya, Putar 🎀</button>
+                    <button id="noBtn" class="audio-btn">🎀 Tidak 🎀</button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Elemen Audio (Tersembunyi) -->
+        <audio id="bgMusic" loop>
+            <source src="file/musik.mp3" type="audio/mpeg">
+        </audio>
+
     <div class="container">
         <!-- Balon -->
         <div class="balloons">

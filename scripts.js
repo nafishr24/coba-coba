@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const audioModal = document.getElementById('audioModal');
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const bgMusic = document.getElementById('bgMusic');
+    const container = document.querySelector('.container');
+
+    // Handler tombol Ya
+    yesBtn.addEventListener('click', function() {
+        bgMusic.play().catch(e => {
+            document.addEventListener('click', () => bgMusic.play(), { once: true });
+        });
+        audioModal.style.display = 'none';
+        container.style.display = 'block';
+        animateButton(this);
+    });
+
+    // Handler tombol Tidak
+    noBtn.addEventListener('click', function() {
+        audioModal.style.display = 'none';
+        container.style.display = 'block';
+        animateButton(this);
+    });
+
+    function animateButton(button) {
+        button.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            button.style.transform = 'scale(1)';
+        }, 200);
+    }
+});
+
 // Fungsi untuk membuat confetti
 function createConfetti() {
     const colors = ['#e91e63', '#9c27b0', '#3f51b5', '#03a9f4', '#009688', '#8bc34a', '#ffeb3b', '#ff9800'];
