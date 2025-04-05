@@ -338,7 +338,6 @@ h1 {
     color: #5d4037;
     background: url('https://img.freepik.com/free-vector/vintage-paper-texture_1194-6505.jpg');
     background-size: cover;
-    display: inline-block;
     border-radius: 5px;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
     animation: popIn 0.5s ease-out;
