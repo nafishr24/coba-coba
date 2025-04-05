@@ -312,6 +312,7 @@ h1 {
 /* Buku Terbuka */
 .book-opened {
     position: fixed;
+    overflow-x: auto; /* Menambahkan scrollbar */
     bottom: -100vh;
     left: 0;
     width: 100%;
