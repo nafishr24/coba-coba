@@ -332,7 +332,7 @@ h1 {
 }
 
 .book-content {
-    /* max-width: 80%; */
+    font-size: 1.2em; /* Ukuran font untuk desktop */
     text-align: center;
     padding: 20px;
     color: #5d4037;
@@ -345,6 +345,11 @@ h1 {
     animation: popIn 0.5s ease-out;
 }
 
+.book-opened .book-content p {
+    font-size: 1em; /* Ukuran normal untuk paragraf */
+    line-height: 1.6;
+}
+
 @keyframes popIn {
     0% { transform: scale(0.5); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
@@ -353,12 +358,8 @@ h1 {
 .book-content h2 {
     color: #d81b60;
     margin-bottom: 20px;
+    font-size: 1.5em; /* Ukuran untuk heading */
     animation: colorChange 5s infinite alternate;
-}
-
-.book-content p {
-    font-size: 1.2rem;
-    margin: 10px 0;
 }
 
 /* Style untuk tombol Tutup */
@@ -448,8 +449,18 @@ h1 {
         right: 15px;
     }
     
+    /* Ukuran font untuk mobile */
     .book-content {
-        max-width: 90%;
+        font-size: 1em; /* Ukuran normal untuk mobile */
+        padding: 15px;
+    }
+    
+    .book-content h2 {
+        font-size: 1.3em; /* Ukuran lebih kecil untuk heading di mobile */
+    }
+    
+    .book-content p {
+        font-size: 0.9em; /* Ukuran lebih kecil untuk paragraf di mobile */
     }
 }
 
@@ -465,5 +476,9 @@ h1 {
     .blue-book {
         width: 60px;
         height: 80px;
+    }
+    
+    .book-content {
+        font-size: 0.9em; /* Ukuran lebih kecil untuk perangkat sangat kecil */
     }
 }
