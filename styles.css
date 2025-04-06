@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Playwrite+MX+Guides&display=swap');
+
+:root {
+    --first_font: "Shadows Into Light", cursive;
+    --second_font: "Playwrite MX Guides", cursive;
+}
 
 body {
-    font-family: "Shadows Into Light", cursive;
+    font-family: var(--first_font);
     font-weight: 400;
     font-size: 23px;
     font-style: normal;
@@ -42,6 +47,7 @@ body {
 }
 
 .modal-content {
+    font-family: var(--first_font);
     background: white;
     padding: 2rem;
     border-radius: 12px;
@@ -50,7 +56,6 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
     transform: translateY(-20px);
     animation: slideUp 0.5s forwards;
-    font-family: "Shadows Into Light", cursive;
     color: #d81b60;
 }
 
@@ -188,7 +193,10 @@ h1 {
 
 /* Pesan */
 .message {
-    font-size: 1.2em;
+    font-family: var(--second_font);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.1em;
     line-height: 1.6;
     margin: 20px 0 60px;
     padding: 0 30px; /* Tambahkan padding kiri-kanan */
