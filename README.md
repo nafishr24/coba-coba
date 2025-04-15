@@ -7,3 +7,5 @@ I wanted to give you a birthday wish unlike any other, something no one has ever
 I’ve woven simple words with code and formulas because that’s my way of stepping closer to your world. Even though I don’t know what the future holds, one thing is certain: **right now, I love you with all my heart—with every bit of logic and chaos in me.**  
 
 Happy birthday, my love. May this day remind you just how precious you are—to the world, and most of all, to me.  
+
+**The Link** : https://nafishr24.github.io/her-birthday/
